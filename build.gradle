@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+       // mavenCentral()
+        maven{ url 'https://maven.aliyun.com/repository/public/'}
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.12.RELEASE"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'application'
+
+group 'com.huan'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+  //  mavenCentral()
+    maven{ url 'https://maven.aliyun.com/repository/public?'}
+}
+
+dependencies {
+    compile 'org.springframework:spring-context-support'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-undertow'
+    runtime 'org.springframework:spring-instrument'
+    compileOnly 'org.projectlombok:lombok'
+
+    compile 'org.springframework.boot:spring-boot-starter-jdbc'
+    compile 'org.springframework.data:spring-data-commons'
+    compile 'mysql:mysql-connector-java'
+    compile 'org.mybatis.caches:mybatis-ehcache:1.1.0'
+    compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+
+}
