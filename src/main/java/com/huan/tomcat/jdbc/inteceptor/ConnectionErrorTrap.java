@@ -23,17 +23,6 @@ import java.util.concurrent.atomic.LongAdder;
 /**
  * @author edenhuan
  * Connection error trap interceptor. Release connection when sql execute error.
- * <p>
- * You need modify properties when you use this interceptor in spring project,such as:
- * spring.datasource.tomcat.jdbc-interceptors=com.webank.weboot.repo.tomcat.interceptor.ConnectionErrorTrap
- * </p>
- * Everytime an operation is called on the {@link java.sql.Connection} object the
- * {@link #invoke(Object, Method, Object[])}method on the interceptor will be
- * called. And the interceptor will release current connection When catch SQLException.
- * Everytime an operation is called on the {@link Statement} object the
- * {@link StatementProxy#invoke(Object, Method, Object[])} will be called. And
- * the StatementProxy will release current connection When catch SQLException.
- * The interceptor also record the num of released connection.
  */
 public class ConnectionErrorTrap extends AbstractCreateStatementInterceptor {
     protected PooledConnection con;

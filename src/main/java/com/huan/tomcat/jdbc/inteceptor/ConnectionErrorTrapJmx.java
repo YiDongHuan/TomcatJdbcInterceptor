@@ -17,11 +17,7 @@ import java.util.concurrent.atomic.LongAdder;
 /**
  * @author edenhuan
  * Connection error trap interceptor which can register as Mbean. Release connection and send
- * notification when sql execute error.
- * <p>
- * You need modify properties when you use this jmx interceptor in spring project,such as:
- * spring.datasource.tomcat.jdbc-interceptors=com.webank.weboot.repo.tomcat.interceptor.ConnectionErrorTrapJmx
- * </p>
+ * notification when set connection discard.
  */
 public class ConnectionErrorTrapJmx extends ConnectionErrorTrap
         implements ConnectionErrorTrapJmxMBean, NotificationEmitter {
