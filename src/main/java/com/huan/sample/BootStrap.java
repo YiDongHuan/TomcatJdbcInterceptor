@@ -10,8 +10,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @Slf4j
 @SpringBootApplication()
-@MapperScan(basePackages = {"com.huan.test.logback.repo.mapper"})
-@ComponentScan(basePackages = {"com.huan.test"})
+@MapperScan(basePackages = {"com.huan.sample.repo.mapper"})
+@ComponentScan(basePackages = {"com.huan.sample"})
 public class BootStrap {
 
     public static void main(String[] args) {
